@@ -72,6 +72,21 @@ const Navbar = () => {
     setMenuVisible(!menuVisible);
   };
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      toggleMenu(); 
+    }
+  };
+  const scrollToHome = () => {
+    const HomeSection = document.getElementById('home');
+    if (HomeSection) {
+        HomeSection.scrollIntoView({ behavior: 'smooth' });
+      toggleMenu(); 
+    }
+  };
+
   return (
     <NavbarContainer>
       <Logo>Uzair Farooq</Logo>
@@ -79,10 +94,10 @@ const Navbar = () => {
         &#9776;
       </MenuToggle>
       <NavLinks data-menuvisible={menuVisible}>
-        <a href="/" onClick={toggleMenu}>
+        <a href="#" onClick={scrollToHome}>
           Home
         </a>
-        <a href="#about" onClick={toggleMenu}>
+        <a href="#" onClick={scrollToAbout}>
           About
         </a>
         <a href="#projects" onClick={toggleMenu}>

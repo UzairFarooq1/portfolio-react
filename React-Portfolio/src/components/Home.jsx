@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Typed from 'typed.js';
 import profileImage from '../assets/images/profiledp.jpg';
 import Navbar from './Navbar';
-
+import About from './About';
 
 
 
@@ -30,7 +30,6 @@ border-width: 10px;
 `
 const StyledHr = styled.hr`
 border: 0;
-margin: 0 auto;
 height: 1px;
 background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 
@@ -68,18 +67,48 @@ const Home = () =>{
           var typed = new Typed(typedOutput, options);
         }
     
-        // Clean up the Typed instance when the component unmounts
         return () => {
           if (typedOutput && typed) {
             typed.destroy();
           }
         };
       }, []); 
+
+
+      useEffect(() => {
+        var languages = [
+          "English",
+          "Swahili",
+          "Chinese"
+        ];
+    
+        var options = {
+          strings: languages,
+          typeSpeed: 50,
+          backSpeed: 20,
+          loop: true,
+        };
+    
+        var typedOutput = document.getElementById('language');
+    
+        if (typedOutput) {
+          var typed = new Typed(typedOutput, options);
+        }
+    
+        return () => {
+          if (typedOutput && typed) {
+            typed.destroy();
+          }
+        };
+      }, []);
+
+      const aboutRef = useRef();
+    
   return (
     <>
     <Navbar />
     
-    <HomeContainer>
+    <HomeContainer ref={aboutRef} id="home">
           <Dp>
               <Image src={profileImage}  alt="profile" />
           </Dp>
@@ -92,7 +121,11 @@ const Home = () =>{
                   A Solid Foundation In Areas Such As Programming Languages, Database Management And Network Fundamentals</p>
           </Info>
       </HomeContainer>
-      <StyledHr /></>
+      <StyledHr />
+      <About />
+      <StyledHr />
+      </>
+
 
   );
 }
