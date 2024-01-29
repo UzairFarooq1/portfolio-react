@@ -7,7 +7,7 @@ const NavbarContainer = styled.div`
   overflow: hidden;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -72,20 +72,14 @@ const Navbar = () => {
     setMenuVisible(!menuVisible);
   };
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-      toggleMenu(); 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      toggleMenu();
     }
   };
-  const scrollToHome = () => {
-    const HomeSection = document.getElementById('home');
-    if (HomeSection) {
-        HomeSection.scrollIntoView({ behavior: 'smooth' });
-      toggleMenu(); 
-    }
-  };
+
 
   return (
     <NavbarContainer>
@@ -94,16 +88,16 @@ const Navbar = () => {
         &#9776;
       </MenuToggle>
       <NavLinks data-menuvisible={menuVisible}>
-        <a href="#" onClick={scrollToHome}>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
           Home
         </a>
-        <a href="#" onClick={scrollToAbout}>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
           About
         </a>
-        <a href="#projects" onClick={toggleMenu}>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
           Projects
         </a>
-        <a href="#contact" onClick={toggleMenu}>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>
           Contact
         </a>
       </NavLinks>

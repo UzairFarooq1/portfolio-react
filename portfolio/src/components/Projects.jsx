@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import project1 from '../assets/images/project01.jpg';
 import project2 from '../assets/images/project02.jpg';
@@ -105,9 +105,11 @@ const LoadMoreButton = styled.button`
 
 
 const Projects = () => {
+  const projectsRef = useRef();
+
   return (
-    <ProjectsContainer>
-      <h1>My Projects</h1>
+    <ProjectsContainer ref={projectsRef} id="projects" className="projects animated">
+      <h1 style={{textAlign: 'center'}}>My Projects</h1>
       <br />
       <ProjectCards>
         {/* Project 1 */}

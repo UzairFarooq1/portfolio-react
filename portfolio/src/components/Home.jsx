@@ -5,6 +5,8 @@ import profileImage from '../assets/images/profiledp.jpg';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
+import Contact from './Contact';
+
 
 
 
@@ -104,17 +106,17 @@ const Home = () =>{
         };
       }, []);
 
-      const aboutRef = useRef();
+      const homeRef = useRef();
     
   return (
     <>
     <Navbar />
     
-    <HomeContainer ref={aboutRef} id="home">
+    <HomeContainer ref={homeRef} id="home">
           <Dp>
               <Image src={profileImage}  alt="profile" />
           </Dp>
-          <h1>Hi there!</h1>
+          <h1>Hi, I am Uzair Farooq!</h1>
           <span id="talent"></span>
           <Info>
               <p>Welcome To My Personal Portfolio! I Am A Passionate And Dedicated University Student Pursuing A Degree In BBIT.
@@ -128,6 +130,8 @@ const Home = () =>{
       <StyledHr />
       <Projects />
       <StyledHr />
+      <Contact />
+
       </>
 
 
