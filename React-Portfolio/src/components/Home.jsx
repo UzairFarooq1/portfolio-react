@@ -4,6 +4,8 @@ import Typed from 'typed.js';
 import profileImage from '../assets/images/profiledp.jpg';
 import Navbar from './Navbar';
 import About from './About';
+import Projects from './Projects';
+
 
 
 
@@ -123,6 +125,8 @@ const Home = () =>{
       </HomeContainer>
       <StyledHr />
       <About />
+      <StyledHr />
+      <Projects />
       <StyledHr />
       </>
 
