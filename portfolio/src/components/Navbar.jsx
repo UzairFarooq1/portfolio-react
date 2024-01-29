@@ -91,6 +91,9 @@ const Navbar = () => {
         <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
           Home
         </a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('jokes'); }}>
+          Jokes
+        </a>
         <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
           About
         </a>

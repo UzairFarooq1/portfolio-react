@@ -1,4 +1,4 @@
-What is NPM? 
+What is NPM?  
 What is SPA?
 What is the event loop?
 What is the difference between export x and export default x? How do you import them differently?

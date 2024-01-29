@@ -6,6 +6,10 @@ import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
+import ChuckNorrisJokes from './ChuckNorrisJokes';
+import Footer from './Footer';
+
+
 
 
 
@@ -125,12 +129,15 @@ const Home = () =>{
                   A Solid Foundation In Areas Such As Programming Languages, Database Management And Network Fundamentals</p>
           </Info>
       </HomeContainer>
+      <ChuckNorrisJokes />
       <StyledHr />
       <About />
       <StyledHr />
       <Projects />
       <StyledHr />
       <Contact />
+      
+      <Footer />
 
       </>
 
