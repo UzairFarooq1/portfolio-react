@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Typed from 'typed.js';
-import profileImage from '../assets/images/profiledp.jpg';  // Import the image
+import profileImage from '../assets/images/profiledp.jpg';
+import Navbar from './Navbar';
+
 
 
 
@@ -13,7 +15,9 @@ padding: 2em;
 `;
 
 const Dp = styled.div`
-
+@media only screen and (max-width: 768px) {
+    margin-top: 25px;
+  }
 `
 const Image = styled.img`
 width: 300px;
@@ -22,6 +26,7 @@ height: 300px;
 border-style: double;
 border-color: black;
 border-width: 10px;
+
 `
 const StyledHr = styled.hr`
 border: 0;
@@ -71,7 +76,10 @@ const Home = () =>{
         };
       }, []); 
   return (
-    <><HomeContainer>
+    <>
+    <Navbar />
+    
+    <HomeContainer>
           <Dp>
               <Image src={profileImage}  alt="profile" />
           </Dp>
